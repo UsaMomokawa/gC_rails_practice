@@ -1,0 +1,35 @@
+<h1>メンバー詳細</h1>
+<table>
+  <thead>
+    <tr><th>名前</th><th>メール</th><th>年齢</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @member.name %></td>
+      <td><%= @member.email %></td>
+      <td><%= @member.age %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to '編集', edit_member_path(@member) %>
+
+<h2>タスクリスト</h2>
+
+<table>
+  <thead>
+    <tr><th>タイトル</th></tr>
+  </thead>
+  <tbody>
+    <% @member.tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= link_to '詳細', task_path(task) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

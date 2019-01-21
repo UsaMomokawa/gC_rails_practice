@@ -1,0 +1,12 @@
+<h1>タスク詳細</h1>
+
+<dl>
+<dt>メンバー</dt>
+<dd><%= @task.member.name %></dd>
+<dt>タイトル</dt>
+<dd> <td><%= @task.title %></td></dd>
+<dt>内容</dt>
+<dd><%= simple_format @task.content %></dd>
+</dl>
+
+<%= link_to '編集', edit_task_path(@task) %>

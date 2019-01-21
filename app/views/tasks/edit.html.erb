@@ -1,0 +1,15 @@
+<%= form_for @task do |f| %>
+
+  <dl>
+  <dt>メンバー</dt>
+  <dd><%= f.collection_select :member_id,
+                          Member.all, :id, :name %></dd>
+  <dt>タイトル</dt>
+  <dd><%= f.text_field :title %></dd>
+  <dt>内容</dt>
+  <dd><%= f.text_area :content %></dd>
+  </dl>
+
+  <%= f.submit '変更' %>
+
+<% end %>
